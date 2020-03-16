@@ -4,28 +4,28 @@
       <div class="weather-now__main-display-indicators">
         <img v-if="!CITY_NOW.main" src="../assets/loading.gif" alt="weather icon" style="width: 120px;">
         <img v-else :src="'http://openweathermap.org/img/wn/'+CITY_NOW.weather[0].icon+'@2x.png'" alt="weather icon" style="width: 200px;">
-        <p class="text-light temperature">{{ CITY_NOW.main ? Math.round(CITY_NOW.main.temp - 273.15) : '-'}}&deg;</p>
+        <p class="text-light temperature">{{ Math.round(CITY_NOW.main.temp - 273.15) || '-'}}&deg;</p>
       </div>
       <div class="weather-now__main-display-text"></div>
-      <p class="text-light txt-right">ощущается как: {{ CITY_NOW.main ? Math.round(CITY_NOW.main.feels_like - 273.15) : '-'}}&deg;</p>
-      <p class="text-light txt-spacing">{{ CITY_NOW.weather ? CITY_NOW.weather[0].description : 'just a moment :)'}}</p>
+      <p class="text-light txt-right">ощущается как: {{ Math.round(CITY_NOW.main.feels_like - 273.15) || '-'}}&deg;</p>
+      <p class="text-light txt-spacing">{{ CITY_NOW.weather[0].description || 'just a moment :)'}}</p>
     </div>
     <div class="weather-now__additional-info">
       <div class="weather-now__additional-info-section">
         <p class="text-light">Ветер</p>
-        <p class="desc"><b>{{ CITY_NOW.wind ? CITY_NOW.wind.speed : '-' }}</b> м/с, {{ CITY_NOW.wind ? DIRECTION[Math.floor((CITY_NOW.wind.deg +22)/44)] : '-'}}</p>
+        <p class="desc"><b>{{ CITY_NOW.wind.speed || '-' }}</b> м/с, {{ CITY_NOW.wind ? DIRECTION[Math.floor((CITY_NOW.wind.deg +22)/44)] : '-'}}</p>
       </div>
       <div class="weather-now__additional-info-section">
         <p class="text-light">Давление</p>
-        <p class="desc"><b>{{ CITY_NOW.main ? CITY_NOW.main.pressure * 0.75 : '-' }}</b> мм рт.ст</p>
+        <p class="desc"><b>{{ CITY_NOW.main.pressure * 0.75 || '-' }}</b> мм рт.ст</p>
       </div>
       <div class="weather-now__additional-info-section">
         <p class="text-light">Влажность</p>
-        <p class="desc"><b>{{ CITY_NOW.main ? CITY_NOW.main.humidity : '-' }}</b> %</p>
+        <p class="desc"><b>{{ CITY_NOW.main.humidity || '-' }}</b> %</p>
       </div>
       <div class="weather-now__additional-info-section">
         <p class="text-light">Видимость</p>
-        <p class="desc"><b>{{ CITY_NOW.visibility ? CITY_NOW.visibility / 1000 : "-"}}</b> км</p>
+        <p class="desc"><b>{{ CITY_NOW.visibility / 1000 || "-"}}</b> км</p>
       </div>
     </div>
   </div>

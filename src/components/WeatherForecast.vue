@@ -2,10 +2,10 @@
   <div class="weather-forecast-wrapper">
     <div class="oneday-wrapper" v-for="day in CITY_FORECAST.list" :key="day.id">
       <img :src="'http://openweathermap.org/img/wn/'+day.weather[0].icon+'@2x.png'" alt="weather icon">
-      <p class="text-light">{{ day.weather ? day.weather[0].main : '-'}}</p>
-      <p class="txt-big txt-bold">{{ day.main ? Math.round(day.main.temp - 273.15) : '-'}}&deg;</p>
+      <p class="text-light">{{ day.weather[0].main || '-'}}</p>
+      <p class="txt-big txt-bold">{{ Math.round(day.main.temp - 273.15) || '-'}}&deg;</p>
       <i class="fas fa-wind fa-lg opacity"></i>
-      <p class="desc"><b>{{ day.wind ? day.wind.speed : '-' }}</b> м/с</p>
+      <p class="desc"><b>{{ Math.round(day.wind.speed * 10)/10 || '-' }}</b> м/с</p>
       <p class="desc baseline"><img src="../assets/humidity.png" alt="vl" style="height: 24px; width: 24px;"/><b> {{ day.main ? day.main.humidity : '-' }}</b>%</p>
     </div>
   </div>
