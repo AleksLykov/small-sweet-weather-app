@@ -37,6 +37,7 @@ export default {
   width: 20%;
   justify-content: start;
   align-items: center;
+  margin-bottom: 4em;
   img {
     height: 50px;
     width: 80px;

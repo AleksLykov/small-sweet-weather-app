@@ -132,7 +132,6 @@ body {
   background: top right / cover no-repeat url(assets/wback.png) fixed;
   display: flex;
   flex-flow: column nowrap;
-  flex: auto;
   justify-content: space-between;
 }
 #app {

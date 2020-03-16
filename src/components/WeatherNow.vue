@@ -71,7 +71,6 @@ export default {
   align-items: center;
   img {
     height: 120px;
-    // width: 120px;
     margin: 0;
     opacity: 0.7;
     object-fit: cover;
@@ -91,7 +90,7 @@ export default {
   height: 50px;
   display: flex;
   flex-flow: row wrap;
-  @media only screen and (max-width: 480px) { height: 120px; }
+  @media only screen and (max-width: 480px) { height: 160px; }
 }
 .weather-now__additional-info-section {
   width: 25%;
