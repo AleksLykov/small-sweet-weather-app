@@ -38,6 +38,7 @@ export default {
   justify-content: start;
   align-items: center;
   margin-bottom: 4em;
+  @media (pointer: coarse) { margin-bottom: 8em; }
   img {
     height: 50px;
     width: 80px;

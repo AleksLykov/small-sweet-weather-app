@@ -87,10 +87,11 @@ export default {
 }
 .weather-now__additional-info {
   width: 100%;
-  height: 50px;
+  height: 70px;
   display: flex;
   flex-flow: row wrap;
-  @media only screen and (max-width: 480px) { height: 160px; }
+  @media only screen and (max-width: 480px) { height: 140px; margin-bottom: 6em; }
+  @media only screen and (max-width: 340px) { height: 140px; margin-bottom: .5em;}
 }
 .weather-now__additional-info-section {
   width: 25%;
